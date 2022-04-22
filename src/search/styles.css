@@ -212,3 +212,8 @@ input {
     margin-top: 10px;
     margin-bottom: 100px;
 }
+
+.active {
+    display: initial;
+    opacity: 1 !important;
+}

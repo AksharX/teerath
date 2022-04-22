@@ -50,37 +50,37 @@ function Blog() {
         <div id="bPosts" class="row">
           <div class="col">
             <img src="https://www.worldatlas.com/upload/00/7a/a1/shutterstock-1544405363.jpg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
           <div class="col">
             <img src="https://assets.weforum.org/global_future_council/image/xALg-7b0WN5aLOY6aejbKW3NepG-PEipzKnEuyS8ZlI.jpeg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
           <div class="col">
             <img src="https://media.cntraveler.com/photos/5a8f3b070e2cf839e9dbfa1d/2:1/w_2560%2Cc_limit/NYC_GettyImages-640006562.jpg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
           <div class="col">
             <img src="https://www.worldatlas.com/upload/00/7a/a1/shutterstock-1544405363.jpg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
         </div>
         <div id="bPosts" class="row">
           <div class="col">
             <img src="https://assets.weforum.org/global_future_council/image/xALg-7b0WN5aLOY6aejbKW3NepG-PEipzKnEuyS8ZlI.jpeg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
           <div class="col">
             <img src="https://media.cntraveler.com/photos/5a8f3b070e2cf839e9dbfa1d/2:1/w_2560%2Cc_limit/NYC_GettyImages-640006562.jpg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
           <div class="col">
             <img src="https://www.worldatlas.com/upload/00/7a/a1/shutterstock-1544405363.jpg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
           <div class="col">
             <img src="https://assets.weforum.org/global_future_council/image/xALg-7b0WN5aLOY6aejbKW3NepG-PEipzKnEuyS8ZlI.jpeg" alt="" />
-            <a href="planner.html" style="text-decoration: none;"><p>Click Here For More Info</p></a>
+            <a href="planner.html" className="text-none"><p>Click Here For More Info</p></a>
           </div>
         </div>
       </div>

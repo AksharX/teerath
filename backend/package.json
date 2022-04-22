@@ -1,0 +1,32 @@
+{
+  "name": "senior-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon dbServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tpatel62/SProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tpatel62/SProject/issues"
+  },
+  "homepage": "https://github.com/Tpatel62/SProject#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.3",
+    "mysql": "^2.18.1",
+    "yelp-api": "^1.0.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}

@@ -1,0 +1,214 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .main-wrapper {
+    max-width:1280px;
+    margin:auto;
+    padding:20px;
+    background:#f9f9f9;
+  }
+  .navbar{
+    display:flex;
+  }
+  .navbar ul {
+    margin:0 0rem 0 0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex:1 0 0%;
+    justify-content:space-between
+  }
+  .navbar ul a {
+    display:block;
+    padding:10px 12px;
+    height: auto;
+  }
+body{
+    /* background-color: white; */
+    /* background-image: url("https://images.wallpapersden.com/image/download/city-building-sunshine-pixel-art_a2ZnameUmZqaraWkpJRmbmdlrWZlbWU.jpg"); */
+}
+
+h1{
+    color: azure;
+}
+
+.city{
+    width: 100%;
+}
+.sticky{
+    opacity: 0.7;
+}
+
+.navbar img{
+    width: 25px;
+    height:25px;
+}
+.navbar {
+    /* fixed keyword is fine too */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* z-index works pretty much like a layer:
+    the higher the z-index value, the greater
+    it will allow the navigation tag to stay on top
+    of other tags */
+}
+.navbar-brand {
+    height: auto;
+    width: 25%;
+}
+
+/*  */
+
+p {
+    color: #000000;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+input {
+    font-size: 1rem;
+}
+
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.25rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: #1f2124;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.767);
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    color: white;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.card>.header {
+    margin-bottom: 0.25rem;
+}
+
+.card>.body {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.hide {
+    display: none;
+}
+
+#searching{
+    margin-top: 20px;
+    margin-left: 200px;
+    /* border: solid 1px black; */
+    padding: 20px;
+}
+
+/* Searching Div */
+
+#searching{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+#searching:before, #searching:after{
+  content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    /* top:0px; */
+    /* bottom:0px; */
+    /* left:0; */
+    /* right:0; */
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+#searching:after{
+  /* right:10px; */
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+#calen{
+    margin-top: 20px;
+    padding: 20px;
+    /* border: solid 1px black; */
+}
+
+/* Calen Div */
+
+#calen{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+#calen:before, #calen:after{
+  content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    /* top:0px; */
+    /* bottom:0px; */
+    /* left:0; */
+    /* right:0; */
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+#calen:after{
+  /* right:10px; */
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+#holdingStuff{
+    margin-top: 30px;
+    padding-left: 5%;
+    margin-right: 5%;
+}
+
+#postButtonDiv{
+    margin-top: 10px;
+    margin-bottom: 100px;
+}

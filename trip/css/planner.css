@@ -1,0 +1,162 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .main-wrapper {
+    max-width:1280px;
+    margin:auto;
+    padding:20px;
+    background:#f9f9f9;
+  }
+  .navbar{
+    display:flex;
+  }
+  .navbar ul {
+    margin:0 0rem 0 0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex:1 0 0%;
+    justify-content:space-between
+  }
+  .navbar ul a {
+    display:block;
+    padding:10px 12px;
+    height: auto;
+  }
+body{
+    /* background-color: white; */
+    /* background-image: url("https://images.wallpapersden.com/image/download/city-building-sunshine-pixel-art_a2ZnameUmZqaraWkpJRmbmdlrWZlbWU.jpg"); */
+}
+
+.city{
+    width: 100%;
+}
+.sticky{
+    opacity: 0.7;
+}
+
+.navbar img{
+    width: 25px;
+    height:25px;
+}
+.navbar {
+    /* fixed keyword is fine too */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* z-index works pretty much like a layer:
+    the higher the z-index value, the greater
+    it will allow the navigation tag to stay on top
+    of other tags */
+}
+.navbar-brand {
+    height: auto;
+    width: 25%;
+}
+
+#list{
+    /* border: solid 1px black; */
+    height: 879px;
+    margin: 40px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#list h3{
+    margin-top: 20px;
+}
+
+#maps{
+    /* border: solid 1px black; */
+    height: fit-content;
+}
+
+#pictures{
+    /* border: solid 1px black; */
+    height: 600px;
+    margin: 20px;
+}
+
+#description{
+    /* border: solid 1px black; */
+    height: fit-content;
+    margin: 30px;
+    /* padding-right: 80px; */
+    padding: 30px;
+}
+
+.descrip{
+    width: 100%;
+    text-align: justify;
+}
+
+/* Description Div */
+
+#description{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+#description:before, #description:after{
+  content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    /* top:10px; */
+    /* bottom:10px; */
+    /* left:0; */
+    /* right:0; */
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+#description:after{
+  /* right:10px; */
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+/* List Div */
+
+#list{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+#list:before, #list:after{
+  content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    /* top:0px; */
+    /* bottom:0px; */
+    /* left:0; */
+    /* right:0; */
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+#list:after{
+  /* right:10px; */
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}

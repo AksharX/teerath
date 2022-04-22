@@ -1,0 +1,18 @@
+.navbar img{
+  width: 25px;
+  height:25px;
+}
+.navbar {
+  /* fixed keyword is fine too */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* z-index works pretty much like a layer:
+  the higher the z-index value, the greater
+  it will allow the navigation tag to stay on top
+  of other tags */
+}
+.navbar-brand {
+  height: auto;
+  width: 25%;
+}

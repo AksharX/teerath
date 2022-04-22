@@ -90,7 +90,7 @@ function Search() {
       businessHours: true, // display business hours
       editable: true,
       selectable: true,
-      events: [events],
+      events: events,
     });
     // rendering the calendar after the clicks
     calendar.render();

@@ -3,8 +3,15 @@ const app = express()
 const mysql = require("mysql")
 const { MongoClient, Binary } = require('mongodb')
 var multer = require('multer');
-var upload = multer({dest: 'uploads/'});
+var upload = multer({ dest: 'uploads/' });
 var fs = require("fs")
+var ImageKit = require("imagekit")
+
+var imagekit = new ImageKit({
+    publicKey: "public_YIc9+O1lNdUQvhNEAwVIjncH4fg=",
+    privateKey: "private_lorh5Ma2iWDKLMGf7rs+IzmKOWY=",
+    urlEndpoint: "https://ik.imagekit.io/atlas"
+});
 
 // const db = mysql.createPool({
 //    connectionLimit: 100,
@@ -20,7 +27,7 @@ var fs = require("fs")
 // })
 
 const uri =
-   "mongodb+srv://tpatel62:roYixtDoKbAGufF3@atlas.gs32r.mongodb.net/ATLAS?retryWrites=true&w=majority";
+    "mongodb+srv://tpatel62:roYixtDoKbAGufF3@atlas.gs32r.mongodb.net/ATLAS?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 client.connect().then(s => {
     console.log("Connected to Mongo Db!")
@@ -49,8 +56,8 @@ require("dotenv").config()
 
 
 const port = process.env.PORT
-app.listen(port, 
-()=> console.log(`Server Started on port ${port}...`))
+app.listen(port,
+    () => console.log(`Server Started on port ${port}...`))
 client.connect()
 
 
@@ -58,14 +65,14 @@ const bcrypt = require("bcrypt")
 app.use(express.json())
 app.use(upload.single('file'))
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
     );
     next();
-  });
+});
 
 
 // app.post("/createUser", async (req,res) => {
@@ -101,29 +108,42 @@ app.use(function(req, res, next) {
 // })
 
 app.post("/blogs", async (req, res) => {
-  console.log(req.body)
-  const data = { file:  Binary(fs.readFileSync(req.file.path)), caption: req.body.caption }
-  const database = client.db("ATLAS");
-  const blogsCollection = database.collection("blogs");
-  await blogsCollection.insertOne(data)
 
-  res.sendStatus(200)
+    console.log(req.file)
+    const buffer = fs.readFileSync(req.file.path)
+    console.log(buffer)
+    imagekit.upload({
+        file: buffer,
+        fileName: req.file.filename,
+    }).then(async (response) => {
+        console.log(response.url)
+        const database = client.db("ATLAS");
+        const blogsCollection = database.collection("blogs");
+
+        await blogsCollection.insertOne({
+            caption: req.body.caption,
+            imageUrl: response.url
+        });
+        res.sendStatus(200)
+    }).catch(e => {
+        res.sendStatus(500)
+        console.log(e)
+    })
 })
 
-app.get("/blogs", async (req, res) => {    
-  const database = client.db("ATLAS");
-  const blogsCollection = database.collection("blogs");
+app.get("/blogs", async (req, res) => {
+    const database = client.db("ATLAS");
+    const blogsCollection = database.collection("blogs");
 
-  const blogs = await blogsCollection.find().toArray()
-  res.send(blogs.map(s => {
-  }))        
+    const blogs = await blogsCollection.find().toArray()
+    res.send(blogs)
 })
-app.get("/events", async (req, res) => {    
+app.get("/events", async (req, res) => {
     const database = client.db("ATLAS");
     const eventsCollection = database.collection("events");
 
     const events = await eventsCollection.find().toArray()
-    res.send(events)        
+    res.send(events)
 })
 
 app.post("/events", async (req, res) => {
@@ -133,23 +153,23 @@ app.post("/events", async (req, res) => {
 
     const database = client.db("ATLAS");
     const eventsCollection = database.collection("events");
-    
+
     eventsCollection.insertOne(event)
-    
+
     res.sendStatus(200)
 })
 
 
-app.get("/yelp", async (req,res) => {
+app.get("/yelp", async (req, res) => {
     try {
         const axios = require('axios');
         const response = await axios.get(`https://api.yelp.com/v3/businesses/search?term=${req.query.term || "Food"}&location=${req.query.location || "Manhattan"}`, {
-                headers: {
-                  Authorization: 'Bearer ' + "c15imz89xvXSsGl10eiRJYU8xLhHievqkMC-7RvTnI9aIuLr2QM8Ayq_HuQd0c8vqmix7MtINV1Ba-qORG-NNPy32T7gH34EA7S7qvrN5fS2Whj-pdWeWsd8D-5UYnYx" //the token is a variable which holds the token
-                }
-               })
-        
-            res.send(response.data)
+            headers: {
+                Authorization: 'Bearer ' + "c15imz89xvXSsGl10eiRJYU8xLhHievqkMC-7RvTnI9aIuLr2QM8Ayq_HuQd0c8vqmix7MtINV1Ba-qORG-NNPy32T7gH34EA7S7qvrN5fS2Whj-pdWeWsd8D-5UYnYx" //the token is a variable which holds the token
+            }
+        })
+
+        res.send(response.data)
     } catch (error) {
         res.send(error)
     }

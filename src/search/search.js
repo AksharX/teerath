@@ -71,6 +71,8 @@ function Search() {
       method: 'post',
       body: form_data,
     })
+
+    setShowModal(false)
   }
 
   const renderCalender = async () => {

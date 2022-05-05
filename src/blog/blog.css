@@ -85,8 +85,8 @@ body {
 #bPosts .col {
   margin: 20px;
   /* border: solid 1px black; */
-  width: 200px;
-  height: 300px;
+  max-width: 200px;
+  max-height: 300px;
   padding: 10px;
 }
 
@@ -134,6 +134,11 @@ body {
   -ms-transform: skew(8deg) rotate(3deg);
   -o-transform: skew(8deg) rotate(3deg);
   transform: skew(8deg) rotate(3deg);
+}
+
+
+h1 {
+  color: black !important;
 }
 
 #postsTitle {
